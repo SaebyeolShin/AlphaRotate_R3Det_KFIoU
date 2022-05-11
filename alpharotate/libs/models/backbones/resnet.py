@@ -3,11 +3,17 @@
 from __future__ import absolute_import, print_function, division
 
 
-import tensorflow as tf
-import tensorflow.contrib.slim as slim
-from tensorflow.contrib.slim.nets import resnet_v1
-from tensorflow.contrib.slim.nets import resnet_utils
-from tensorflow.contrib.slim.python.slim.nets.resnet_v1 import resnet_v1_block
+# import tensorflow as tf
+import tensorflow.compat.v1 as tf
+# import tensorflow.contrib.slim as slim
+import tf_slim as slim
+
+from tf_slim.nets import resnet_v1, resnet_utils
+from tf_slim.nets.resnet_v1 import resnet_v1_block
+
+# from tensorflow.contrib.slim.nets import resnet_v1
+# from tensorflow.contrib.slim.nets import resnet_utils
+# from tensorflow.contrib.slim.python.slim.nets.resnet_v1 import resnet_v1_block
 # import tfplot as tfp
 
 

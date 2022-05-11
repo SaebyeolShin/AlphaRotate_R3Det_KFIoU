@@ -11,8 +11,10 @@ import os
 import sys
 
 import numpy as np
-import tensorflow as tf
-import tensorflow.contrib.slim as slim
+# import tensorflow 
+import tensorflow.compat.v1 as tf
+# import tensorflow.contrib.slim as slim
+import tf_slim as slim 
 
 sys.path.append("../../")
 

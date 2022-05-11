@@ -2,9 +2,10 @@
 
 from __future__ import division, print_function
 
-import tensorflow as tf
-
-slim = tf.contrib.slim
+# import tensorflow as tf
+import tensorflow.compat.v1 as tf
+# slim = tf.contrib.slim
+import tf_slim as slim
 
 
 class DarkNetBackbone(object):

@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import absolute_import, print_function, division
-import tensorflow.contrib.slim as slim
-import tensorflow as tf
+# import tensorflow as tf
+import tensorflow.compat.v1 as tf
+# import tensorflow.contrib.slim as slim
+import tf_slim as slim
 
 from alpharotate.libs.models.backbones.mobilenet import mobilenet_v2
 from alpharotate.libs.models.backbones.mobilenet.mobilenet import training_scope

@@ -2,8 +2,10 @@
 
 from __future__ import absolute_import, division, print_function
 
-import tensorflow as tf
-import tensorflow.contrib.slim as slim
+# import tensorflow as tf
+import tensorflow.compat.v1 as tf
+# import tensorflow.contrib.slim as slim
+import tf_slim as slim
 
 from alpharotate.libs.models.detectors.single_stage_base_network import DetectionNetworkBase
 from alpharotate.libs.models.losses.losses_kfiou import LossKF

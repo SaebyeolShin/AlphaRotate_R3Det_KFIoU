@@ -14,7 +14,8 @@ from multiprocessing import Queue, Process
 
 import cv2
 import numpy as np
-import tensorflow as tf
+# import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from alpharotate.libs.utils.rotate_polygon_nms import rotate_gpu_nms
 from tqdm import tqdm
 
@@ -72,10 +73,10 @@ class TestDOTA(object):
         print('+-' * 40)
         label_map = LabelMap(cfgs)
         self.name_label_map, self.label_name_map = label_map.name2label(), label_map.label2name()
-
+        
     def worker(self, gpu_id, images, det_net, result_queue):
         os.environ["CUDA_VISIBLE_DEVICES"] = str(gpu_id)
-
+        tf.disable_v2_behavior()
         img_plac = tf.placeholder(dtype=tf.uint8, shape=[None, None, 3])  # is RGB. not BGR
         img_batch = tf.cast(img_plac, tf.float32)
 
@@ -89,12 +90,12 @@ class TestDOTA(object):
 
         detection_boxes, detection_scores, detection_category = det_net.build_whole_detection_network(
             input_img_batch=img_batch)
-
+        
         init_op = tf.group(
             tf.global_variables_initializer(),
             tf.local_variables_initializer()
         )
-
+        
         restorer, restore_ckpt = det_net.get_restorer()
 
         config = tf.ConfigProto()
@@ -110,8 +111,8 @@ class TestDOTA(object):
 
                 # if 'P0302' not in img_path:
                 #     continue
-
                 img = cv2.imread(img_path)
+                
                 # img = np.load(img_path.replace('images', 'npy').replace('.png', '.npy'))
 
                 box_res_rotate = []
@@ -120,7 +121,7 @@ class TestDOTA(object):
 
                 imgH = img.shape[0]
                 imgW = img.shape[1]
-
+                
                 for h_len, w_len, h_overlap, w_overlap in zip(self.args.h_len, self.args.w_len, self.args.h_overlap, self.args.w_overlap):
 
                     img_short_side_len_list = self.cfgs.IMG_SHORT_SIDE_LEN if isinstance(self.cfgs.IMG_SHORT_SIDE_LEN, list) else [
@@ -151,7 +152,9 @@ class TestDOTA(object):
                                 ww_ = ww
                             src_img = img[hh_:(hh_ + h_len), ww_:(ww_ + w_len), :]
 
+                            
                             for short_size in img_short_side_len_list:
+                                
                                 max_len = self.cfgs.IMG_MAX_LENGTH
                                 if h_len < w_len:
                                     new_h, new_w = short_size, min(int(short_size * float(w_len) / h_len), max_len)
@@ -159,16 +162,19 @@ class TestDOTA(object):
                                     new_h, new_w = min(int(short_size * float(h_len) / w_len), max_len), short_size
                                 img_resize = cv2.resize(src_img, (new_w, new_h))
 
+                                
                                 resized_img, det_boxes_r_, det_scores_r_, det_category_r_ = \
                                     sess.run(
                                         [img_batch, detection_boxes, detection_scores, detection_category],
                                         feed_dict={img_plac: img_resize[:, :, ::-1]}
                                     )
+                                ## box, score, category가 다 빈 리스트로 나옴
 
                                 resized_h, resized_w = resized_img.shape[1], resized_img.shape[2]
                                 src_h, src_w = src_img.shape[0], src_img.shape[1]
-
+                                
                                 if len(det_boxes_r_) > 0:
+                                    
                                     det_boxes_r_ = forward_convert(det_boxes_r_, False)
                                     det_boxes_r_[:, 0::2] *= (src_w / resized_w)
                                     det_boxes_r_[:, 1::2] *= (src_h / resized_h)
@@ -180,8 +186,9 @@ class TestDOTA(object):
                                         box_res_rotate.append(box_rotate)
                                         label_res_rotate.append(det_category_r_[ii])
                                         score_res_rotate.append(det_scores_r_[ii])
-
+                                
                                 if self.args.flip_img:
+                                    
                                     det_boxes_r_flip, det_scores_r_flip, det_category_r_flip = \
                                         sess.run(
                                             [detection_boxes, detection_scores, detection_category],
@@ -217,11 +224,11 @@ class TestDOTA(object):
                                             box_res_rotate.append(box_rotate)
                                             label_res_rotate.append(det_category_r_flip[ii])
                                             score_res_rotate.append(det_scores_r_flip[ii])
-
+                                
                 box_res_rotate = np.array(box_res_rotate)
                 label_res_rotate = np.array(label_res_rotate)
                 score_res_rotate = np.array(score_res_rotate)
-
+                
                 box_res_rotate_ = []
                 label_res_rotate_ = []
                 score_res_rotate_ = []
@@ -276,6 +283,7 @@ class TestDOTA(object):
 
                 result_dict = {'boxes': np.array(box_res_rotate_), 'scores': np.array(score_res_rotate_),
                                'labels': np.array(label_res_rotate_), 'image_id': img_path}
+                
                 result_queue.put_nowait(result_dict)
 
     def test_dota(self, det_net, real_test_img_list, txt_name):
@@ -299,18 +307,19 @@ class TestDOTA(object):
             proc.start()
             procs.append(proc)
 
+
         for i in range(nr_records):
             res = result_queue.get()
 
             if self.args.show_box:
-
+                
                 nake_name = res['image_id'].split('/')[-1]
                 tools.makedirs(os.path.join(save_path, 'dota_img_vis'))
                 draw_path = os.path.join(save_path, 'dota_img_vis', nake_name)
 
                 draw_img = np.array(cv2.imread(res['image_id']), np.float32)
                 detected_boxes = backward_convert(res['boxes'], with_label=False)
-
+                
                 detected_indices = res['scores'] >= self.cfgs.VIS_SCORE
                 detected_scores = res['scores'][detected_indices]
                 detected_boxes = detected_boxes[detected_indices]

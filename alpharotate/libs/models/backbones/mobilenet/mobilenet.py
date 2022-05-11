@@ -22,10 +22,12 @@ import contextlib
 import copy
 import os
 
-import tensorflow as tf
 
+# import tensorflow as tf
+import tensorflow.compat.v1 as tf
+import tf_slim as slim
 
-slim = tf.contrib.slim
+# slim = tf.contrib.slim
 
 
 @slim.add_arg_scope

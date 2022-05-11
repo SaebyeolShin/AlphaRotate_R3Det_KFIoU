@@ -4,8 +4,10 @@ from __future__ import absolute_import, division, print_function
 
 import os
 
-import tensorflow as tf
-import tensorflow.contrib.slim as slim
+# import tensorflow as tf
+import tensorflow.compat.v1 as tf
+# import tensorflow.contrib.slim as slim
+import tf_slim as slim
 from alpharotate.libs.models.anchor_heads.generate_anchors import GenerateAnchors
 from alpharotate.libs.models.backbones.build_backbone_p3top7 import BuildBackbone
 from alpharotate.libs.utils.show_box_in_tensor import DrawBoxTensor
@@ -159,6 +161,7 @@ class DetectionNetworkBase(object):
 
     def get_restorer(self):
         checkpoint_path = tf.train.latest_checkpoint(os.path.join(self.cfgs.TRAINED_CKPT, self.cfgs.VERSION))
+        
         if checkpoint_path is not None:
             if self.cfgs.RESTORE_FROM_RPN:
                 print('___restore from rpn___')
@@ -176,7 +179,7 @@ class DetectionNetworkBase(object):
                 return None, None
             checkpoint_path = self.cfgs.PRETRAINED_CKPT
             print("model restore from pretrained mode, path is :", checkpoint_path)
-
+        
             model_variables = slim.get_model_variables()
 
             # for var in model_variables:

@@ -26,12 +26,14 @@ from __future__ import print_function
 
 import copy
 
-import tensorflow as tf
+# import tensorflow as tf
+import tensorflow.compat.v1 as tf
+import tf_slim as slim
 
 from alpharotate.libs.models.backbones.mobilenet import conv_blocks as ops
 from alpharotate.libs.models.backbones.mobilenet import mobilenet as lib
 
-slim = tf.contrib.slim
+# slim = tf.contrib.slim
 op = lib.op
 
 expand_input = ops.expand_input_by_factor

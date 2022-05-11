@@ -22,6 +22,7 @@ class TestDOTAR3DetKF(TestDOTA):
 
         r3det_kf = build_whole_network.DetectionNetworkR3DetKF(cfgs=self.cfgs,
                                                                is_training=False)
+                                                               
         self.test_dota(det_net=r3det_kf, real_test_img_list=real_test_img_list, txt_name=txt_name)
 
         if not self.args.show_box:
