@@ -222,10 +222,6 @@ cd $PATH_ROOT/output/summary
 tensorboard --logdir=.
 ``` 
 
-![1](./images/images.png)
-
-![2](./images/scalars.png)
-
 ## Citation
 
 If you find our code useful for your research, please consider cite.
