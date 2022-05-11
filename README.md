@@ -54,11 +54,6 @@ The above-mentioned rotation detectors are all modified based on the following h
 - RefineDet: [MxNet code](https://github.com/DetectionTeamUCAS/RefineDet_MxNet) <img src="https://img.shields.io/github/stars/DetectionTeamUCAS/RefineDet_MxNet?style=social" />
 - FCOS: [TF code](https://github.com/DetectionTeamUCAS/FCOS_Tensorflow) <img src="https://img.shields.io/github/stars/DetectionTeamUCAS/FCOS_Tensorflow?style=social" />, [MxNet code](https://github.com/DetectionTeamUCAS/FCOS_GluonCV) <img src="https://img.shields.io/github/stars/DetectionTeamUCAS/FCOS_GluonCV?style=social" />
 
-![3](./images/demo.gif)
-
-## Projects
-![0](./images/projects.png)
-
 ## Latest Performance
 
 <!-- More results and trained models are available in the [MODEL_ZOO.md](MODEL_ZOO.md). -->
