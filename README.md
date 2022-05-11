@@ -1,5 +1,5 @@
 # AlphaRotate: A Rotation Detection Benchmark using TensorFlow
-### Tensorflow 1.13.1 -> 2.2.0
+## Tensorflow 1.13.1 -> 2.2.0
 
 [![Documentation Status](https://readthedocs.org/projects/rotationdetection/badge/?version=latest)](https://rotationdetection.readthedocs.io/en/latest/?badge=latest)
 [![PyPI](https://badge.fury.io/py/alpharotate.svg)](https://badge.fury.io/py/alpharotate)
