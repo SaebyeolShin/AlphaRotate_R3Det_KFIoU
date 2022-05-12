@@ -25,12 +25,12 @@ conda install -c conda-forge tqdm
 
 ## Download Model
 ### 1. Pretrain weights put them to => $PATH_ROOT/dataloader/pretrained_weights. 
-+ [MxNet pretrain weights](https://drive.google.com/drive/folders/1BM8ffn1WnsRRb5RcuAcyJAHX8NS2M1Gz?usp=sharing) (resnet50v1d.ckpt~ 만 다운)
++ [MxNet pretrain weights](https://drive.google.com/drive/folders/1BM8ffn1WnsRRb5RcuAcyJAHX8NS2M1Gz?usp=sharing) (resnet50v1d.ckpt~)
 + [Tensorflow pretrain weights: resnet50_v1](http://download.tensorflow.org/models/resnet_v1_50_2016_08_28.tar.gz)
-+ [Pytorch pretrain weights](https://drive.google.com/drive/folders/14Bx6TK4LVadTtzNFTQj293cKYk_5IurH?usp=sharing) (resnet50.npy 만 다운)
++ [Pytorch pretrain weights](https://drive.google.com/drive/folders/14Bx6TK4LVadTtzNFTQj293cKYk_5IurH?usp=sharing) (resnet50.npy)
 
-### 2. Trained weights: [RetinaNet_DOTA_R3Det_KF_2x_20210911.zip (u77v)](https://pan.baidu.com/s/1n5eqqqE0j3dhYgXM-4_k5A) to => $PATH_ROOT/output/trained_weights.
-
+### 2. Trained weights: [(u77v)](https://pan.baidu.com/s/1n5eqqqE0j3dhYgXM-4_k5A) to => $PATH_ROOT/output/trained_weights.
++ RetinaNet_DOTA_R3Det_KF_2x_20210911.zip
 ### 3. Visualization is in => $PATH_ROOT/tools/r3det_kfiou/test_dota/VERSION
 
 ## Test
