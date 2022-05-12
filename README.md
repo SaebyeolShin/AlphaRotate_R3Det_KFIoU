@@ -31,9 +31,15 @@ conda install -c conda-forge tqdm
 
 ## Test
     ```  
+    # large-scale image, take DOTA dataset as a example
     python test_dota_sota.py --test_dir='/PATH/TO/IMAGES/'  
                              --gpus=0,1,2,3,4,5,6,7  
                              -s (visualization, optional)
                              -cn (use cpu nms, slightly better <1% than gpu nms but slower, optional)
+                             
+    # small-scale image, take HRSC2016 as a example
+    python test_hrsc2016.py --img_dir='/PATH/TO/IMAGES/'  
+                        --gpu=0
+                        -s (visualization, optional)
     ``` 
 
