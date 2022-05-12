@@ -113,9 +113,6 @@ class TestHRSC2016(object):
 
                 a_img_name = a_img_name.split(image_ext)[0]
 
-                # print("="*100)
-                # print(a_img_name)
-                # print(os.path.join(img_dir,a_img_name))
                 if a_img_name[-1]=="t":
                     continue
 
