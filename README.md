@@ -1,4 +1,4 @@
-# AlphaRotate: A Rotation Detection Benchmark using TensorFlow (R3Det_KFIoU) 1.13.1 -> 2.2.0
+# AlphaRotate : R3Det_KFIoU 1.13.1 -> 2.2.0
 
 ## Installation
 ```shell
