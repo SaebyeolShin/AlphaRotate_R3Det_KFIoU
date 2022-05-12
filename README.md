@@ -13,7 +13,6 @@
  :rocket::rocket::rocket:	**News:** MMRotate has been released at https://github.com/open-mmlab/mmrotate <img src="https://img.shields.io/github/stars/open-mmlab/mmrotate?style=social" /> :rocket::rocket::rocket:
 
 ## Installation
-### Manual configuration (cuda version < 11)
 ```shell
 # 가상환경 먼저 만든 후 (python=3.6)
 pip install cython
