@@ -39,7 +39,7 @@ python test_dota_sota.py --test_dir='/PATH/TO/IMAGES/'
 
 # small-scale image, take HRSC2016 as a example
 python test_hrsc2016.py --img_dir='/PATH/TO/IMAGES/'  
-                    --gpu=0
-                    -s (visualization, optional)
+                        --gpu=0
+                        -s (visualization, optional)
 ``` 
 
