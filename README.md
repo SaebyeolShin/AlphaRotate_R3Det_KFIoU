@@ -30,7 +30,7 @@ conda install -c conda-forge tqdm
 ### Visualization is in => $PATH_ROOT/tools/r3det_kfiou/test_dota/VERSION
 
 ## Test
-    ```  
+    ```shell
     # large-scale image, take DOTA dataset as a example
     python test_dota_sota.py --test_dir='/PATH/TO/IMAGES/'  
                              --gpus=0,1,2,3,4,5,6,7  
