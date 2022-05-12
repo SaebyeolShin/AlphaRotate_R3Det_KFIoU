@@ -1,4 +1,8 @@
 # AlphaRotate : R3Det_KFIoU 1.13.1 -> 2.2.0
+- [x] Dataset: DOTA 1.0
+- [x] Backbone: ResNet50
+- [x] Detectors: R<sup>3</sup>Det **(AAAI21)**
+- [x] Method: KFIoU
 
 ## Installation
 ```shell
