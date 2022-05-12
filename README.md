@@ -12,10 +12,6 @@
  <!-- :rocket::rocket::rocket:	**News:** The MMDetection version cooperating with MMLab will be released soon, stay tuned.:rocket::rocket::rocket: -->
  :rocket::rocket::rocket:	**News:** MMRotate has been released at https://github.com/open-mmlab/mmrotate <img src="https://img.shields.io/github/stars/open-mmlab/mmrotate?style=social" /> :rocket::rocket::rocket:
 
-| Method | Baseline |    DOTA1.0  |   DOTA1.5   |   DOTA2.0   | Model | Anchor | Angle Pred. | Reg. Loss| Angle Range | Configs |      
-|:------------:|:------------:|:-----------:|:----------:|:-----------:|:----------:|:-----------:|:-----------:|:-----------:|:---------:|:---------:|    
-| [KFIoU](https://arxiv.org/abs/2201.12558) | [R<sup>3</sup>Det](https://arxiv.org/abs/1908.05612) | 72.28 | 64.69 | 50.41 | [Baidu Drive (u77v)](https://pan.baidu.com/s/1n5eqqqE0j3dhYgXM-4_k5A) | H->R | Reg. (∆⍬) | **kfiou** | [-90,0)  | [dota1.0,](./configs/DOTA/r3det_kfiou/cfgs_res50_dota_r3det_kf_v5.py) [dota1.5,](./configs/DOTA1.5/r3det_kfiou/cfgs_res50_dota1.5_r3det_kf_v4.py) [dota2.0](./configs/DOTA2.0/r3det_kfiou/cfgs_res50_dota2.0_r3det_kf_v4.py) |
-
 ## Installation
 ### Manual configuration (cuda version < 11)
 ```shell
@@ -45,6 +41,9 @@ conda install -c conda-forge tqdm
 * [Google Drive](https://drive.google.com/drive/folders/14Bx6TK4LVadTtzNFTQj293cKYk_5IurH?usp=sharing)      
 
 ### Trained weights put them to => $PATH_ROOT/output/trained_weights.
+| Method | Baseline |    DOTA1.0  |   DOTA1.5   |   DOTA2.0   | Model | Anchor | Angle Pred. | Reg. Loss| Angle Range | Configs |      
+|:------------:|:------------:|:-----------:|:----------:|:-----------:|:----------:|:-----------:|:-----------:|:-----------:|:---------:|:---------:|    
+| [KFIoU](https://arxiv.org/abs/2201.12558) | [R<sup>3</sup>Det](https://arxiv.org/abs/1908.05612) | 72.28 | 64.69 | 50.41 | [Baidu Drive (u77v)](https://pan.baidu.com/s/1n5eqqqE0j3dhYgXM-4_k5A) | H->R | Reg. (∆⍬) | **kfiou** | [-90,0)  | [dota1.0,](./configs/DOTA/r3det_kfiou/cfgs_res50_dota_r3det_kf_v5.py) [dota1.5,](./configs/DOTA1.5/r3det_kfiou/cfgs_res50_dota1.5_r3det_kf_v4.py) [dota2.0](./configs/DOTA2.0/r3det_kfiou/cfgs_res50_dota2.0_r3det_kf_v4.py) |
 
 ### Visualization is in => $PATH_ROOT/tools/r3det_kfiou/test_dota/VERSION
 
