@@ -17,6 +17,7 @@
 # 가상환경 먼저 만든 후 (python=3.6)
 pip install cython
 pip install numpy
+
 # 원래는 pip install -r -e . 를 해야하지만 이렇게하면 
 # tensorflow 1.13.1관련된게 엄청 깔리니까 이렇게 하지말고
 conda install tensorflow==2.2.0
