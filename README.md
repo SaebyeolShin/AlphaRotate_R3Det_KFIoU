@@ -21,12 +21,9 @@ conda install -c conda-forge tqdm
 
 ## Download Model
 ### Pretrain weights put them to => $PATH_ROOT/dataloader/pretrained_weights. 
-1. MxNet pretrain weights **(recommend in this repo, default in [NET_NAME](./configs/_base_/models/retinanet_r50_fpn.py))**: resnet_v1d, resnet_v1b, refer to [gluon2TF](./thirdparty/gluon2TF/README.md).    
-* [Baidu Drive (5ht9)](https://pan.baidu.com/s/1GpqKg0dOaaWmwshvv1qWGg)          
-* [Google Drive](https://drive.google.com/drive/folders/1BM8ffn1WnsRRb5RcuAcyJAHX8NS2M1Gz?usp=sharing)  
-2. Tensorflow pretrain weights: [resnet50_v1](http://download.tensorflow.org/models/resnet_v1_50_2016_08_28.tar.gz)
-3. Pytorch pretrain weights, refer to [pretrain_zoo.py](./dataloader/pretrained_weights/pretrain_zoo.py) and [Others](./OTHERS.md).
-* [Google Drive](https://drive.google.com/drive/folders/14Bx6TK4LVadTtzNFTQj293cKYk_5IurH?usp=sharing)      
+1. [MxNet pretrain weights](https://drive.google.com/drive/folders/1BM8ffn1WnsRRb5RcuAcyJAHX8NS2M1Gz?usp=sharing)  
+2. [Tensorflow pretrain weights: resnet50_v1](http://download.tensorflow.org/models/resnet_v1_50_2016_08_28.tar.gz)
+3. [Pytorch pretrain weights](https://drive.google.com/drive/folders/14Bx6TK4LVadTtzNFTQj293cKYk_5IurH?usp=sharing)      
 
 ### Trained weights put them to => $PATH_ROOT/output/trained_weights.
 | Method | Baseline |    DOTA1.0  |   DOTA1.5   |   DOTA2.0   | Model | Anchor | Angle Pred. | Reg. Loss| Angle Range | Configs |      
