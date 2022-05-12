@@ -36,8 +36,7 @@ conda install -c conda-forge tqdm
 ```
 
 ## Download Model
-### Pretrain weights
-Download a pretrain weight you need from the following three options, and then put it to $PATH_ROOT/dataloader/pretrained_weights. 
+### Pretrain weights put them to => $PATH_ROOT/dataloader/pretrained_weights. 
 1. MxNet pretrain weights **(recommend in this repo, default in [NET_NAME](./configs/_base_/models/retinanet_r50_fpn.py))**: resnet_v1d, resnet_v1b, refer to [gluon2TF](./thirdparty/gluon2TF/README.md).    
 * [Baidu Drive (5ht9)](https://pan.baidu.com/s/1GpqKg0dOaaWmwshvv1qWGg)          
 * [Google Drive](https://drive.google.com/drive/folders/1BM8ffn1WnsRRb5RcuAcyJAHX8NS2M1Gz?usp=sharing)  
@@ -45,11 +44,9 @@ Download a pretrain weight you need from the following three options, and then p
 3. Pytorch pretrain weights, refer to [pretrain_zoo.py](./dataloader/pretrained_weights/pretrain_zoo.py) and [Others](./OTHERS.md).
 * [Google Drive](https://drive.google.com/drive/folders/14Bx6TK4LVadTtzNFTQj293cKYk_5IurH?usp=sharing)      
 
+### Trained weights put them to => $PATH_ROOT/output/trained_weights.
 
-### Trained weights
-Please download trained models by this project, then put them to $PATH_ROOT/output/pretained_weights.
-### Visualization
-the output file or visualization is in $PATH_ROOT/tools/r3det_kfiou/test_dota/VERSION
+### Visualization is in => $PATH_ROOT/tools/r3det_kfiou/test_dota/VERSION
 
 ## Test
     ```  
