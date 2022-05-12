@@ -29,7 +29,7 @@ conda install -c conda-forge tqdm
 + [Tensorflow pretrain weights: resnet50_v1](http://download.tensorflow.org/models/resnet_v1_50_2016_08_28.tar.gz)
 + [Pytorch pretrain weights](https://drive.google.com/drive/folders/14Bx6TK4LVadTtzNFTQj293cKYk_5IurH?usp=sharing) (resnet50.npy 만 다운)
 
-### 2. Trained weights [(u77v)](https://pan.baidu.com/s/1n5eqqqE0j3dhYgXM-4_k5A) put them to => $PATH_ROOT/output/trained_weights.
+### 2. Trained weights: [RetinaNet_DOTA_R3Det_KF_2x_20210911.zip (u77v)](https://pan.baidu.com/s/1n5eqqqE0j3dhYgXM-4_k5A) to => $PATH_ROOT/output/trained_weights.
 
 ### 3. Visualization is in => $PATH_ROOT/tools/r3det_kfiou/test_dota/VERSION
 
