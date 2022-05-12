@@ -9,7 +9,7 @@ pip install numpy
 # 원래는 pip install -r -e . 를 해야하지만 이렇게하면 
 # tensorflow 1.13.1관련된게 엄청 깔리니까 이렇게 하지말고
 conda install tensorflow==2.2.0
-conda install -c anaconda tensorflow-gpu==2.2.0 # 이거 해야 GPU 쓰는듯
+conda install -c anaconda tensorflow-gpu==2.2.0 # 이거 해야 GPU 씀
 ## conda list로 tensorflow잘 설치되어있나 확인
 
 # 설치해 주어야함
