@@ -1,17 +1,5 @@
 # AlphaRotate: A Rotation Detection Benchmark using TensorFlow 1.13.1 -> 2.2.0
 
-[![Documentation Status](https://readthedocs.org/projects/rotationdetection/badge/?version=latest)](https://rotationdetection.readthedocs.io/en/latest/?badge=latest)
-[![PyPI](https://badge.fury.io/py/alpharotate.svg)](https://badge.fury.io/py/alpharotate)
-[![Downloads](https://pepy.tech/badge/alpharotate)](https://pepy.tech/project/alpharotate)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/yangxue0827/RotationDetection.svg)](https://github.com/yangxue0827/RotationDetection/issues)
-[![Percentage of issues still open](https://isitmaintained.com/badge/open/yangxue0827/RotationDetection.svg)](https://github.com/yangxue0827/RotationDetection/issues)
-
-<!-- Documentation: [https://rotationdetection.readthedocs.io/](https://rotationdetection.readthedocs.io/) -->
-
- <!-- :rocket::rocket::rocket:	**News:** The MMDetection version cooperating with MMLab will be released soon, stay tuned.:rocket::rocket::rocket: -->
- :rocket::rocket::rocket:	**News:** MMRotate has been released at https://github.com/open-mmlab/mmrotate <img src="https://img.shields.io/github/stars/open-mmlab/mmrotate?style=social" /> :rocket::rocket::rocket:
-
 ## Installation
 ```shell
 # 가상환경 먼저 만든 후 (python=3.6)
